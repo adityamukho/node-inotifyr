@@ -55,7 +55,7 @@ describe 'Inotifyr Events', ->
       fs.createDirSync './test/fixtures/new'
 
     it 'should register all create events for a git clone', (done) ->
-      @timeout 5000
+      @timeout 10000
       watcher = new Inotifyr 'test/fixtures', {recursive: yes, events: 'create'}
       files = []
       watcher.on 'create', (filename, stats) ->
